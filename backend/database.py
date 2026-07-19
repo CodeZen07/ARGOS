@@ -1,9 +1,15 @@
-from sqlalchemy import create_engine, MetaData
-from sqlalchemy.orm import sessionmaker
+import os
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, declarative_base
 
-DATABASE_URL = "postgresql://user:password@localhost:5432/argos"
+# Leer la URL de la base de datos desde las variables de entorno
+DATABASE_URL = os.getenv("DATABASE_URL")
 
+# Crear el motor de conexión
 engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-metadata = MetaData()
 
+# Configurar la sesión
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# Declarar la base para los modelos
+Base = declarative_base()
