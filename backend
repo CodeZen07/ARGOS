@@ -1,0 +1,10 @@
+ARGOS/
+│── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── scraping.py
+│   └── requirements.txt
+│── README.md
+│── .gitignore
+│── frontend/   ← la crearemos más adelante
